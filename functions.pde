@@ -1,4 +1,5 @@
 Object Obj_from_square(int n, int m){
+  // create a physical object made of n*m particle linked with spring.
   
   int indexS = 0;
   Particle[] particule = new Particle[n*m];

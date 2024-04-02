@@ -35,15 +35,17 @@ class Object{
   }
   
   void update(){
+    collision();
     for ( Particle p : part ){ p.update();}
     for ( Spring s : spring ){ s.update();}
   }
   
-  void force( PVector f){
+  void apply_force( PVector f){
     for ( Particle p : part ){ p.acc.add(f);}
   }
   
   void collision(){
+    // calculate collision between particles
     for ( int i = 0 ; i < part.length ; i++){
       for ( int j = i+1 ; j < part.length ; j++){
         if ( part[i].pos.x - part[j].pos.x < 20 && part[i].pos.x - part[j].pos.x > -20
