@@ -34,9 +34,9 @@ class Object{
     for ( Particle p : part ){ p.show();}
   }
   
-  void apply(){
+  void update(){
     for ( Particle p : part ){ p.update();}
-    for ( Spring s : spring ){ s.apply();}
+    for ( Spring s : spring ){ s.update();}
   }
   
   void force( PVector f){

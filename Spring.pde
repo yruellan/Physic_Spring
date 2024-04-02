@@ -20,7 +20,7 @@ class Spring{
     line(A.pos.x,A.pos.y,B.pos.x,B.pos.y);
   }
   
-  void apply(){
+  void update(){
     PVector v = A.pos.copy().sub(B.pos);
     float d = v.mag()-len;
     
