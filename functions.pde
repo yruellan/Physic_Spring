@@ -1,4 +1,4 @@
-Object Obj_from_square(int n, int m){
+Object Obj_from_square(int n, int m,float len){
   // create a physical object made of n*m particle linked with spring.
   
   int indexS = 0;
@@ -9,13 +9,14 @@ Object Obj_from_square(int n, int m){
   println("nb_s",nb_s);
   Spring[] springs = new Spring[nb_s];
   
+  
   for ( int i = 0 ; i<n ; i++){
     for ( int j = 0 ; j<m ; j++){
-      particule[i*m+j] = new Particle(100+i*100,100+j*100);
-      if ( i>0){ springs[indexS] = new Spring(particule[i*m+j],particule[(i-1)*m+j],100) ; indexS++ ;}
-      if ( j>0){ springs[indexS] = new Spring(particule[i*m+j],particule[i*m+(j-1)],100) ; indexS++ ;}
-      if ( j>0 && i>0){ springs[indexS] = new Spring(particule[i*m+j],particule[(i-1)*m+(j-1)],140) ; indexS++ ;}
-      if ( i>0 && j<m-1){ springs[indexS] = new Spring(particule[i*m+j],particule[(i-1)*m+(j+1)],140) ; indexS++ ;}
+      particule[i*m+j] = new Particle(100+int(i*len),100+int(j*len));
+      if ( i>0){ springs[indexS] = new Spring(particule[i*m+j],particule[(i-1)*m+j],len) ; indexS++ ;}
+      if ( j>0){ springs[indexS] = new Spring(particule[i*m+j],particule[i*m+(j-1)],len) ; indexS++ ;}
+      if ( j>0 && i>0){ springs[indexS] = new Spring(particule[i*m+j],particule[(i-1)*m+(j-1)],len*sqrt(2)) ; indexS++ ;}
+      if ( i>0 && j<m-1){ springs[indexS] = new Spring(particule[i*m+j],particule[(i-1)*m+(j+1)],len*sqrt(2)) ; indexS++ ;}
     }
   }
   println(indexS,springs.length,n,m);

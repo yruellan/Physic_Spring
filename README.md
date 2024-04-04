@@ -22,9 +22,18 @@ The simuation is made in different stage :
 - `update` : apply force and calculate acceleration, speed and the new position
 - `show` : show particules and springs
 
+<img src="image/img1.png" width="350">
+<img src="image/img2.png" width="350">
+
 
 ## How to use and modify
 
 You can change the coefficient of friction.
 
 You can create phisical object with `Obj_from_square`. You can add particule or spring with the `add` method of the physical object class.
+
+## Quick Preview
+
+<img src="image/img3.png" width="350">
+<img src="image/img4.png" width="350">
+<img src="image/img5.png" width="350">

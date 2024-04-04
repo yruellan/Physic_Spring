@@ -2,13 +2,11 @@ class Spring{
   Particle A ;
   Particle B ;
   float len ;
-  float strenth ;
   
-  Spring (Particle P1,Particle P2, float k){
+  Spring (Particle P1,Particle P2, float l){
     A = P1 ;
     B = P2 ;
-    len = k ;
-    //strenth = s ;
+    len = l ;
   }
   
   void show(){
